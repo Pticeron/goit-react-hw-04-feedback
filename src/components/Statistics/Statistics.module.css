@@ -1,0 +1,13 @@
+.feedbackList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.feedbackListItem {
+    display: flex;
+    align-items: left;
+    font-size: 2.5rem;
+    padding: 0.5rem;
+    color: rgb(107, 107, 143);
+}
