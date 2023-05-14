@@ -14,16 +14,27 @@ export const App = () => {
   };
 
   const handleFeedback = option => {
-    if (option === 'good') setGood(prev => prev + 1);
-    if (option === 'neutral') setNeutral(prev => prev + 1);
-    if (option === 'bad') setBad(prev => prev + 1);
+    switch (option) {
+      case 'good':
+        setGood(prevState => prevState + 1);
+        break;
+      case 'neutral':
+        setNeutral(prevState => prevState + 1);
+        break;
+      case 'bad':
+        setBad(prevState => prevState + 1);
+        break;
+
+      default:
+        return;
+    }
   };
 
   const positivePercentage = () => {
-    if(totalFeedback() ===0) {
+    if (totalFeedback() === 0) {
       return 0;
-    } 
-return Math.round((good / totalFeedback()) * 100);
+    }
+    return Math.round((good / totalFeedback()) * 100);
   };
 
   return (
